@@ -29,6 +29,32 @@
         <dd>
             @Html.DisplayFor(model => model.Server.Owner)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Server.AppProfiles)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>owner</th>
+                </tr>
+                @foreach (var item in Model.Server.AppProfiles)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AppProfileID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Owner)
+                    </td>
+                </tr>
+                }
+            </table>
+        </dd>
     </dl>
 </div>
 <div>

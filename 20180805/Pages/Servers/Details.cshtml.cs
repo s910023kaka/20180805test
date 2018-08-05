@@ -27,8 +27,12 @@ namespace _20180805.Pages.Servers
                 return NotFound();
             }
 
-            Server = await _context.Servers.FirstOrDefaultAsync(m => m.ServerID == id);
-
+            //Server = await _context.Servers.FirstOrDefaultAsync(m => m.ServerID == id);
+            Server = await _context.Servers
+                       .Include(s => s.AppProfiles)
+        .AsNoTracking()
+                       .FirstOrDefaultAsync(m => m.ServerID == id);
+            
             if (Server == null)
             {
                 return NotFound();
