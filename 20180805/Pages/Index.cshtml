@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.AppProfile[0].AppProfileID)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.AppProfile[0].Name)
             </th>
             <th>
@@ -45,6 +48,9 @@
     <tbody>
         @foreach (var item in Model.AppProfile) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppProfileID)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
