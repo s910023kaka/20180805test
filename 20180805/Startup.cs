@@ -27,7 +27,7 @@ namespace _20180805
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppSystemContext>(options =>
-                                                    options.UseSqlite(Configuration.GetConnectionString("AppSystemContext")));
+                                                    options.UseSqlite("Data Source=AppSystem.db"));
             services.AddMvc();
 
             //services.Configure<CookiePolicyOptions>(options =>
